@@ -1,0 +1,3 @@
+msgraph-core
+azure-identity
+azure-storage
