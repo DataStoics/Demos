@@ -131,22 +131,22 @@ def get_service_principal_by_id(id):
 if __name__ == '__main__':
     # Users API
     get_all_users()
-    get_user_by_upn('deploy@datastoic.onmicrosoft.com')
+    get_user_by_upn('upn')
     # Groups API
     get_all_groups()
     create_group(
         description="Demo - Create AD Group",
         displayName="demoADGroup",
         mailNickname="demoADGroup",
-        owners=["https://graph.microsoft.com/v1.0/users/6041c0a3-1a6b-4917-abb4-a6d04d83dbe5"],
+        owners=["https://graph.microsoft.com/v1.0/users/<object_id>"],
         members=[
-            "https://graph.microsoft.com/v1.0/users/c4393427-a9a5-43a9-8acc-2273d1d7f7b7",  # User
-            "https://graph.microsoft.com/v1.0/servicePrincipals/871aaa57-e5f1-486d-ba1f-f04bfd64b8fb"  # Service Principal
+            "https://graph.microsoft.com/v1.0/users/<object_id>",  # User
+            "https://graph.microsoft.com/v1.0/servicePrincipals/<object_id>"  # Service Principal
         ]
     )
     get_group_by_id('6cd20bec-3635-4a19-8a1d-2eb461b5cfb6')
     # ServicePrincipal API
     get_all_service_principals()
     get_service_principal_by_id(
-        '871aaa57-e5f1-486d-ba1f-f04bfd64b8fb'
+        ''
     )  # Object Id from Enterprise Application section
