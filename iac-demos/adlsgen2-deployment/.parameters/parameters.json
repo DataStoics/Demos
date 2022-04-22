@@ -1,0 +1,73 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "name": {
+            "value": "sapdatalakedemo"
+        },
+        "storageAccountSku": {
+            "value": "Standard_RAGZRS"
+        },
+        "allowBlobPublicAccess": {
+            "value": false
+        },
+        "publicNetworkAccess": {
+            "value": "Enabled"
+        },
+        "enableHierarchicalNamespace":{
+            "value": true
+        },
+        "blobServices": {
+            "value": {
+                "containers": [
+                    {
+                        "name": "dataarea01",
+                        "publicAccess": "None",
+                        "roleAssignments": [
+                            {
+                                "roleDefinitionIdOrName": "Storage Blob Data Contributor",
+                                "principalIds": [
+                                    "95d00cc7-6c7e-4180-a3ce-45c051c98075"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "dataarea02",
+                        "publicAccess": "None",
+                        "roleAssignments": [
+                            {
+                                "roleDefinitionIdOrName": "Storage Blob Data Contributor",
+                                "principalIds": [
+                                    "95d00cc7-6c7e-4180-a3ce-45c051c98075"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "dataarea03",
+                        "publicAccess": "None",
+                        "roleAssignments": [
+                            {
+                                "roleDefinitionIdOrName": "Storage Blob Data Contributor",
+                                "principalIds": [
+                                    "95d00cc7-6c7e-4180-a3ce-45c051c98075"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "roleAssignments": {
+            "value": [
+                {
+                    "roleDefinitionIdOrName": "Reader",
+                    "principalIds": [
+                        "95d00cc7-6c7e-4180-a3ce-45c051c98075"
+                    ]
+                }
+            ]
+        }
+    }
+}

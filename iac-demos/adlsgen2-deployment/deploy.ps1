@@ -1,0 +1,2 @@
+Connect-AzAccount -SubscriptionId 'ed780b0d-a01c-4a39-982b-949f0c8c84e3'
+New-AzResourceGroupDeployment -Name 'sample-datalake' -ResourceGroupName sap-demos-rg -TemplateFile 'C:\Users\repajta.EUROPE\Documents\repos\Demos\iac-demos\adlsgen2-deployment\datalake.bicep' -TemplateParameterFile 'C:\Users\repajta.EUROPE\Documents\repos\Demos\iac-demos\adlsgen2-deployment\.parameters\parameters.json'
